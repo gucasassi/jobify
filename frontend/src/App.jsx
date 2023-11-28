@@ -5,10 +5,15 @@ import {
   ErrorPage,
   LandingPage,
   RegisterPage,
-  DashboardPage,
+  AddJobPage,
+  StatsPage,
+  AllJobsPage,
+  ProfilePage,
+  AdminPage,
 } from "./pages";
 
 import RootLayout from "./components/layouts/RootLayout";
+import DashboardLayout from "./components/layouts/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +24,18 @@ const router = createBrowserRouter([
       { index: true, element: <LandingPage /> },
       { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegisterPage /> },
-      { path: "dashboard", element: <DashboardPage /> },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <AddJobPage /> },
+      { path: "stats", element: <StatsPage /> },
+      { path: "all-jobs", element: <AllJobsPage /> },
+      { path: "profile", element: <ProfilePage /> },
+      { path: "admin", element: <AdminPage /> },
     ],
   },
 ]);
