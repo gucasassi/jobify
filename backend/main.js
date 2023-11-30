@@ -1,5 +1,6 @@
 // Importing required modules
 import dotenv from "dotenv";
+import morgan from "morgan";
 import express from "express";
 
 // Load environment variables
@@ -7,6 +8,9 @@ dotenv.config(".env");
 
 // Create an express app.
 const app = express();
+
+// Morgan logger
+app.use(morgan("dev"));
 
 // Define a route handler just for test
 app.get("/", (req, res) => {
