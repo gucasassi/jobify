@@ -2,6 +2,7 @@
 import dotenv from "dotenv";
 import morgan from "morgan";
 import express from "express";
+import jobs from "./routes/jobs.js";
 
 // Load environment variables
 dotenv.config(".env");
@@ -12,10 +13,8 @@ const app = express();
 // Morgan logger
 app.use(morgan("dev"));
 
-// Define a route handler just for test
-app.get("/", (req, res) => {
-  res.send("Hi there!");
-});
+// Mount Routes
+app.use("/api/v1/jobs", jobs);
 
 // Define the port to run the server on
 const PORT = process.env.APP_PORT || 3000;
