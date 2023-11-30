@@ -1,6 +1,6 @@
 // Importing required modules
-const dotenv = require("dotenv");
-const express = require("express");
+import dotenv from "dotenv";
+import express from "express";
 
 // Load environment variables
 dotenv.config(".env");
