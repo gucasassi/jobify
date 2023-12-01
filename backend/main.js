@@ -2,10 +2,15 @@
 import dotenv from "dotenv";
 import morgan from "morgan";
 import express from "express";
+
 import jobs from "./routes/jobs.js";
+import connectMongoDB from "./configs/mongodb.js";
 
 // Load environment variables
 dotenv.config(".env");
+
+// Connect to MongoDB
+connectMongoDB();
 
 // Create an express app.
 const app = express();
