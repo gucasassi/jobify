@@ -10,6 +10,9 @@ dotenv.config(".env");
 // Create an express app.
 const app = express();
 
+// Body Parser
+app.use(express.json());
+
 // Morgan logger
 app.use(morgan("dev"));
 
