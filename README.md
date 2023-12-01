@@ -2,6 +2,8 @@
 
 Welcome to Jobify, a comprehensive job management application powered by the MERN stack (MongoDB, Express.js, React, Node.js). This platform is designed to facilitate job postings and applications, providing an efficient interface for both employers and job seekers.
 
+![jobify-website](https://github.com/gucasassi/jobify/assets/68822456/71d37cbe-7825-4ec8-bb96-2ecfbcc3a923)
+
 ## Features
 
 - **Job Posting:** Allows employers to easily post and manage job listings.
