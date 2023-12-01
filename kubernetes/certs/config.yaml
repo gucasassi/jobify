@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cert-vars
+  namespace: jobify
+data:
+  #########The next 2 vars are for the cert management
+  namespace: "jobify"
+  clusterfqdn: "jobify.gucasassi.com"
+  admin_email: "gucasassi@gmail.com"

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobify-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobify-front
+  template:
+    metadata:
+      labels:
+        app: jobify-front
+    spec:
+      containers:
+        - name: jobify-front
+          image: gucasassi/jobify-front:1.0.0
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 80

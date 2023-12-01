@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jobify-back
+spec:
+  selector:
+    app: jobify-back
+  ports:
+    - port: 3000
+      targetPort: 3000
