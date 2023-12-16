@@ -1,6 +1,7 @@
 // Importing required modules
 import dotenv from "dotenv";
 import morgan from "morgan";
+import colors from "colors";
 import express from "express";
 
 import jobs from "./routes/jobs.js";
@@ -29,5 +30,5 @@ const PORT = process.env.APP_PORT || 3000;
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${PORT}`.cyan);
 });
