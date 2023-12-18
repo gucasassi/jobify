@@ -43,7 +43,7 @@ export const createJob = async (req, res, next) => {
 export const updateJob = async (req, res, next) => {
   // Update Job
   const { id } = req.params;
-  const job = await Job.findOneAndUpdate(id, req.body, {
+  const job = await Job.findByIdAndUpdate(id, req.body, {
     new: true,
     runValidators: true,
   });
@@ -56,9 +56,7 @@ export const updateJob = async (req, res, next) => {
   }
 
   // Return response
-  return res
-    .status(200)
-    .json({ success: true, message: `update job with id ${req.params.id}` });
+  return res.status(200).json({ success: true, data: job });
 };
 
 // @desc    Delete a job

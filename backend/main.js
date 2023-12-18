@@ -33,6 +33,13 @@ app.use("*", (req, res) => {
   });
 });
 
+// app.use((err, req, res, next) => {
+//   console.log(err);
+//   const statusCode = err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR;
+//   const msg = err.message || "something went wrong, try again later";
+//   res.status(statusCode).json({ msg });
+// });
+
 // Define the port to run the server on
 const PORT = process.env.APP_PORT || 3000;
 
