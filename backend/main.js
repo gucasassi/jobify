@@ -25,6 +25,14 @@ app.use(morgan("dev"));
 // Mount Routes
 app.use("/api/v1/jobs", jobs);
 
+// Fallback route for unmatched requests
+app.use("*", (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: `Can not ${req.method} ${req.originalUrl}`,
+  });
+});
+
 // Define the port to run the server on
 const PORT = process.env.APP_PORT || 3000;
 
